@@ -12,10 +12,10 @@ export const testOnRequest = onRequest(async (request, response) => {
   const taskPayload = {
     foo: "bar",
   };
-  const targetUri = "testOnTaskDispatched"; // <-- This works :)
+  const targetUri =
+    "projects/demo-project/locations/us-central1/functions/testOnTaskDispatched"; // <-- This does NOT work :(
   // const targetUri = "locations/us-central1/functions/testOnTaskDispatched"; // <-- This does NOT work :(
-  // const targetUri =
-  //  "projects/demo-project/locations/us-central1/functions/testOnTaskDispatched"; // <-- This does NOT work :(
+  // const targetUri = "testOnTaskDispatched"; // <-- This works :)
   const queue = getFunctions().taskQueue(targetUri);
 
   try {
